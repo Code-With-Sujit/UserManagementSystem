@@ -24,7 +24,7 @@ public class User
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "USER_ID")
-	private String userId;
+	private Integer userId;
 
 	@Column(name = "USER_NAME")
 	private String userName;

@@ -1,5 +1,6 @@
 package com.srnr.ums.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,15 +16,12 @@ import com.srnr.ums.userservice.UserServiceI;
 @RequestMapping(value = "/user")
 public class UserController {
 	
-	
+	@Autowired
 	private UserServiceI userService;
 	@PostMapping(value = "/registerUser")
 	public ResponseEntity<?> registerUser(@RequestBody UserRequestDTO dto)
 	{
 		UserResponseDTO user = this.userService.saveUser(dto);
-		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.CREATED);
-        
-		
+		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.CREATED);		
 	}
-
 }

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import com.srnr.ums.dto.UserRequestDTO;
 import com.srnr.ums.dto.UserResponseDTO;
 import com.srnr.ums.userservice.UserServiceI;
@@ -15,7 +15,7 @@ import com.srnr.ums.userservice.UserServiceI;
 @RequestMapping(value = "/user")
 public class UserController {
 	
-	
+	@Autowired
 	private UserServiceI userService;
 	@PostMapping(value = "/registerUser")
 	public ResponseEntity<?> registerUser(@RequestBody UserRequestDTO dto)

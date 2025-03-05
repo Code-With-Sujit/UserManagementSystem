@@ -18,10 +18,11 @@ public class UserController {
 	
 	private UserServiceI userService;
 	@PostMapping(value = "/registerUser")
-	public ResponseEntity<UserResponseDTO> registerUser(@RequestBody UserRequestDTO dto)
+	public ResponseEntity<?> registerUser(@RequestBody UserRequestDTO dto)
 	{
 		UserResponseDTO user = this.userService.saveUser(dto);
-		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.OK);
+		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.CREATED)
+        
 		
 	}
 

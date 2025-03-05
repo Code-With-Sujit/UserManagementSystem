@@ -21,7 +21,7 @@ public class UserController {
 	public ResponseEntity<?> registerUser(@RequestBody UserRequestDTO dto)
 	{
 		UserResponseDTO user = this.userService.saveUser(dto);
-		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.CREATED)
+		return new ResponseEntity<UserResponseDTO>(user,HttpStatus.CREATED);
         
 		
 	}
